@@ -4,7 +4,7 @@ import { users } from "./users";
 
 export const organizationUser = pgTable('organization_user', {
       userId: uuid('user_id').notNull().references(() => users.id),
-      organizationId: uuid('group_id').notNull().references(() => organizations.id),
+      organizationId: uuid('organization_id').notNull().references(() => organizations.id),
 }, (t) => ({
       pk: primaryKey(t.userId, t.organizationId),
 }),
